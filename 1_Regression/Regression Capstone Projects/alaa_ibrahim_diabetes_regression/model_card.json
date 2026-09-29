@@ -1,0 +1,23 @@
+{
+    "model_name": "Tuned Random Forest",
+    "dataset": "Diabetes Dataset",
+    "task": "Regression",
+    "n_samples": 442,
+    "n_features": 10,
+    "features": [
+        "age",
+        "sex",
+        "bmi",
+        "bp",
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+    ],
+    "target": "target",
+    "test_r2": 0.491104229493606,
+    "test_mae": 45.080538130624326,
+    "test_rmse": 53.75406311981634
+}
