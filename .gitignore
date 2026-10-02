@@ -6,6 +6,7 @@
 __pycache__/
 *.py[cod]
 *.so
+.egg-info/
 .venv/
 venv/
 env/
@@ -13,7 +14,6 @@ ENV/
 .pytest_cache/
 .ruff_cache/
 .mypy_cache/
-*.egg-info/
 build/
 dist/
 
@@ -21,11 +21,67 @@ dist/
 .ipynb_checkpoints/
 **/note.ipynb
 
-# ── Environment & secrets ─────────────────────
+# ── Datasets (never commit — re-downloadable) ─
+data/cifar-10-batches-py/
+data/cifar-10-python.tar.gz
+data/MNIST/
+data/FashionMNIST/
+data/imdb/
+data/coco128/
+data/cifar*/
+**/data/raw/
+**/datasets/coco128/
+5_GPT from scratch/gpt2_weights/
+
+# ── Model binaries ────────────────────────────
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.engine
+**/models/v*/
+**/models/*.pkl
+**/checkpoints/*.pt
+**/checkpoints/*.pth
+**/checkpoints/models--*/
+**/checkpoints/CACHEDIR.TAG
+
+# ── Demo outputs (large binaries) ─────────────
+**/Demos/output_*/
+**/Demos/*.mp4
+**/Demos/*.webm
+**/Demos/*.avi
+**/Demos/*.mov
+**/Demos/*.mkv
+**/detection_output/
+**/generated/
+**/runs/
+
+# ── Experiment tracking ───────────────────────
+mlruns/
+mlartifacts/
+wandb/
+lightning_logs/
+tensorboard/
+
+# ── Random tools / archives ───────────────────
+bfg.jar
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+!**/*.yaml
+
+# ── Environment / secrets ─────────────────────
 .env
 .env.local
 .env.*.local
-!.env.example
 secrets.json
 credentials.json
 
@@ -39,79 +95,24 @@ credentials.json
 .DS_Store
 Thumbs.db
 
-# ── Logs & temp ───────────────────────────────
+# ── Logs ──────────────────────────────────────
 *.log
-*.tmp
-*.temp
 
-# ── ML experiment tracking (local only) ───────
-mlruns/
-mlartifacts/
-wandb/
-lightning_logs/
-tensorboard/
-
-# ── Model binaries — students should NOT commit ─
-*.pkl
-*.joblib
-*.h5
-*.hdf5
-*.onnx
-*.engine
-**/models/v*/
-**/Demos/output_*/
-detection_output/
-
-# ── YOLO weights (root + Module 4) — re-downloadable ─
-/yolov8*.pt
-4_Applied Deep Learning with PyTorch/*.pt
-4_Applied Deep Learning with PyTorch/**/*.pt
-
-# ── Datasets — re-downloadable ────────────────
-4_Applied Deep Learning with PyTorch/data/
-4_Applied Deep Learning with PyTorch/**/data/
-5_GPT from scratch/data/
-5_GPT from scratch/gpt2_weights/
-5_GPT from scratch/checkpoints/
-
-# ── Dataset archives ──────────────────────────
-4_Applied Deep Learning with PyTorch/coco128.zip
-4_Applied Deep Learning with PyTorch/**/coco128.zip
-**/*.zip
-!**/coco128.yaml
-
-# ── Demo videos (generated) ───────────────────
-*.mp4
-*.webm
-*.avi
-*.mov
-*.mkv
-
-# ── Gradio auto-generated ─────────────────────
-.gradio/
-
-# ── YOLO training runs ────────────────────────
-runs/
-
-# ── Module 5 — PDFs (keep covers only) ────────
+# Module 5 — Large PDF resources (re-downloadable)
 5_GPT from scratch/Resources/*.pdf
 !5_GPT from scratch/Resources/*.jpg
 !5_GPT from scratch/Resources/*.png
 
-# ── miniGPT (standalone repo) ─────────────────
-miniGPT/wandb/
-miniGPT/checkpoints/*.pt
-!miniGPT/checkpoints/epoch_*.pt
+# Gradio certificates (auto-generated)
+**/.gradio/
 
-# ── Personal scratch ──────────────────────────
-personal_notes.txt
-todo.txt
-
-# ── Local databases ───────────────────────────
-*.db
-*.sqlite
-*.sqlite3
-
-# ── CLAUDE.md (personal agent config) ─────────
+# Personal AI agent config
 CLAUDE.md
 .claude/
+
+# LFS-tracked data (don't need to be in .gitignore, but the folder shouldn't be tracked without LFS)
+data/
+datasets/
+
+# Module 5 — GPT checkpoint binaries (large, re-downloadable)
+5_GPT from scratch/checkpoints/
