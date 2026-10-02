@@ -1,434 +1,117 @@
-# .gitignore for SAIR - Sudanese Artificial Intelligence Research
+# ═════════════════════════════════════════════
+# SAIR_Jr — .gitignore
+# ═════════════════════════════════════════════
 
-# =================================
-# ENVIRONMENT & CONFIGURATION FILES
-# =================================
-
-# Virtual environments
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.so
 .venv/
 venv/
 env/
 ENV/
-.env/
-env.bak/
-venv.bak/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
 
-# Python virtual environment
-python_env/
+# ── Jupyter ───────────────────────────────────
+.ipynb_checkpoints/
+**/note.ipynb
 
-# Environment variables
+# ── Environment & secrets ─────────────────────
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Configuration files
-config.ini
-*.cfg
-*.config
+.env.*.local
+!.env.example
 secrets.json
 credentials.json
 
-# IDE specific
+# ── IDE / OS ──────────────────────────────────
 .vscode/
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo
 *~
-
-# =================================
-# PYTHON SPECIFIC
-# =================================
-
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may install dependencies that don't work, or not
-#   install all needed dependencies.
-#Pipfile.lock
-
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
-
-# Celery stuff
-celerybeat-schedule
-celerybeat.pid
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# =================================
-# DATA & MODEL FILES
-# =================================
-
-# Large data files (add exceptions for small sample data)
-data/
-!data/README.md
-!data/sample_*
-!data/example_*
-!data/*.txt
-!data/*.csv
-!data/*.json
-
-# Specifically exclude large binary files in data directory
-data/*.gz
-data/*.tar
-data/*.tar.gz
-data/*.zip
-data/*.pkl
-data/*.pickle
-data/*.h5
-data/*.hdf5
-data/*.npz
-data/*.npy
-data/*.pt
-data/*.pth
-
-# Model files
-models/*.pkl
-models/*.pickle
-models/*.h5
-models/*.hdf5
-models/*.pt
-models/*.pth
-models/*.onnx
-models/*.joblib
-
-# Results files
-results/*.pkl
-results/*.pickle
-results/*.csv
-results/*.parquet
-results/*.feather
-
-# Archive files
-*.zip
-*.tar
-*.tar.gz
-*.tgz
-*.rar
-*.7z
-
-
-# =================================
-# OPERATING SYSTEM FILES
-# =================================
-
-# OS generated files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
 
-# Windows
-Desktop.ini
-$RECYCLE.BIN/
-*.lnk
-
-# Linux
-*~
-
-# =================================
-# EDITOR & IDE FILES
-# =================================
-
-# VS Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
-
-# PyCharm
-.idea/
-*.iws
-*.iml
-*.ipr
-
-# Sublime Text
-*.sublime-workspace
-*.sublime-project
-
-# Atom
-.atom/
-*.atom
-
-# Vim
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-*.un~
-Session.vim
-.netrwhist
-*~
-
-# Emacs
-*~
-\#*
-.\#*
-*#
-*.elc
-auto-save-list
-tramp
-.\#*
-
-# =================================
-# ML/DL SPECIFIC
-# =================================
-
-# MLflow
-mlruns/
-mlartifacts/
-
-# TensorBoard
-tensorboard/
-logs/
-
-# Weights & Biases
-wandb/
-
-# DVC
-.dvc/
-.dvcignore
-
-# ML model training artifacts
-checkpoints/
-runs/
-experiments/
-outputs/
-predictions/
-
-# =================================
-# DEPLOYMENT & BUILD
-# =================================
-
-# Docker
-docker-compose.yml
-Dockerfile
-.dockerignore
-
-# Kubernetes
-k8s/
-*.yaml
-*.yml
-
-# Cloud
-*.tfstate
-*.tfstate.*
-.terraform/
-terraform.tfstate
-terraform.tfstate.backup
-
-# =================================
-# DOCUMENTATION
-# =================================
-
-# Sphinx
-docs/_build/
-docs/source/generated/
-
-# MkDocs
-site/
-
-# =================================
-# LOGS
-# =================================
-
-# Log files
+# ── Logs & temp ───────────────────────────────
 *.log
-logs/
-*.logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# =================================
-# TEMPORARY FILES
-# =================================
-
-# Temporary files
 *.tmp
 *.temp
-tmp/
-temp/
 
-# =================================
-# CUSTOM RULES FOR SAIR PROJECT
-# =================================
+# ── ML experiment tracking (local only) ───────
+mlruns/
+mlartifacts/
+wandb/
+lightning_logs/
+tensorboard/
 
-# Keep these specific files
-!data/README.md
-!models/README.md
-!results/README.md
-
-# Exclude personal notes
-personal_notes.txt
-todo.txt
-
-# Exclude local database files
-*.db
-*.sqlite
-*.sqlite3
-
-# =================================
-# SAFETY MEASURES
-# =================================
-
-# Never commit credentials
-*credentials*
-*password*
-*secret*
-*key*
-*.pem
-*.key
-*.crt
-*.cert
-
-# Backup files
-*.bak
-*.backup
-*.old
-*.orig
-*.save
-
-# Archive files
-*.zip
-*.tar
-*.tar.gz
-*.tgz
-*.rar
-*.pt 
-
-yolov8n-pose.pt
-yolov8n.pt 
-
-# Large video files
-*.mp4
-*.avi
-*.mov
-*.webm
-*.mkv
-
-# Model files
-*.pt
-*.pth
+# ── Model binaries — students should NOT commit ─
+*.pkl
+*.joblib
+*.h5
+*.hdf5
 *.onnx
 *.engine
-
-# Dataset files
-datasets/
-data/cifar-10-batches-py/
-*.zip
-*.tar.gz
-
-# Detection outputs
+**/models/v*/
+**/Demos/output_*/
 detection_output/
 
-# AI agent files
-CLAUDE.md
-.claude/
+# ── YOLO weights (root + Module 4) — re-downloadable ─
+/yolov8*.pt
+4_Applied Deep Learning with PyTorch/*.pt
+4_Applied Deep Learning with PyTorch/**/*.pt
 
-# Module 5 Resources — PDFs are large, track only cover images
+# ── Datasets — re-downloadable ────────────────
+4_Applied Deep Learning with PyTorch/data/
+4_Applied Deep Learning with PyTorch/**/data/
+5_GPT from scratch/data/
+5_GPT from scratch/gpt2_weights/
+5_GPT from scratch/checkpoints/
+
+# ── Dataset archives ──────────────────────────
+4_Applied Deep Learning with PyTorch/coco128.zip
+4_Applied Deep Learning with PyTorch/**/coco128.zip
+**/*.zip
+!**/coco128.yaml
+
+# ── Demo videos (generated) ───────────────────
+*.mp4
+*.webm
+*.avi
+*.mov
+*.mkv
+
+# ── Gradio auto-generated ─────────────────────
+.gradio/
+
+# ── YOLO training runs ────────────────────────
+runs/
+
+# ── Module 5 — PDFs (keep covers only) ────────
 5_GPT from scratch/Resources/*.pdf
 !5_GPT from scratch/Resources/*.jpg
 !5_GPT from scratch/Resources/*.png
 
-# Module 5 — GPT-2 pretrained weights (large binary, re-downloadable)
-5_GPT from scratch/gpt2_weights/
+# ── miniGPT (standalone repo) ─────────────────
+miniGPT/wandb/
+miniGPT/checkpoints/*.pt
+!miniGPT/checkpoints/epoch_*.pt
+
+# ── Personal scratch ──────────────────────────
+personal_notes.txt
+todo.txt
+
+# ── Local databases ───────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── CLAUDE.md (personal agent config) ─────────
+CLAUDE.md
+.claude/
