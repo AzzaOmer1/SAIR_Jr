@@ -1,0 +1,23 @@
+# Experiment 3x3 Matrix Configuration
+experiment:
+  name: "lecture3_3x3_experiment"
+  description: "3 architectures × 3 datasets = 9 models"
+  date: "2024-01-15"
+
+matrix:
+  architectures: ["simple_dnn", "medium_dnn", "deep_dnn"]
+  datasets: ["mnist", "fashion", "cifar10"]
+
+run_config:
+  download_data: true
+  preprocess_data: true
+  train_models: true
+  evaluate_models: true
+  generate_visualizations: true
+  launch_ui: false  # Set to true to auto-launch UI
+
+output:
+  save_models: true
+  save_results: true
+  save_plots: true
+  generate_report: true

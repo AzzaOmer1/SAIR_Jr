@@ -1,12 +1,15 @@
-# Module 1: Regression Mastery 📈
+
+# 📈 Module 1: Regression Mastery
 
 **From Mathematical Foundations to Production Deployment**
 
+> 📌 **Part of the [SAIR Jr. ML Engineering Track](../README.md)** — bottom-up, depth-first. We build the foundation that lasts years, not the framework of the month.
+
 **📍 Location:** `1_Regression/`  
 **🎯 Prerequisite:** [Module 0: Python Foundations](../0_Python%20and%20Data%20Science%20Tools/README.md)  
-**➡️ Next Module:** [Module 2: Classification & Pipelines](../2_Classification/README.md)
+**➡️ Next Module:** [Module 2: Classification & Production Pipelines](../2_Classification/README.md)
 
-Welcome to the **Regression Module** of **SAIR** – your **first hands-on ML course** where you'll build real models, deploy interactive applications, and solve problems with your own datasets.
+Welcome to the **Regression Module** of **SAIR** — your first hands-on ML course, where you'll build real models, deploy interactive applications, and solve problems with your own datasets. This is where the theory from Module 0 becomes working ML systems.
 
 ---
 
@@ -48,6 +51,8 @@ These are the **essential ML tools** that bridge experimentation to production.
 | **`Lecture_1.ipynb`** | Linear Regression from Scratch | 4-5 hours | **Essential** |
 | **`Lecture_2.ipynb`** | Sklearn + Production Tools | 4-5 hours | **Core ML Skill** |
 | **`Lecture_3.ipynb`** | Deployment & MLflow Pipeline | 5-6 hours | **Production Ready** |
+
+---
 
 ## 🗺️ Your Learning Journey
 
@@ -99,33 +104,37 @@ At SAIR, we believe in **understanding fundamentals before using abstractions**.
 
 ## 🚀 Quick Start Guide
 
-### **For Sequential Learners:**
+### **For Sequential Learners (Recommended):**
 ```bash
 # 1. Start with mathematical foundations
-jupyter notebook Lecture_1.ipynb
+uv run jupyter notebook Lecture_1.ipynb
 
 # 2. Progress to practical implementation
-jupyter notebook Lecture_2.ipynb
+uv run jupyter notebook Lecture_2.ipynb
 
 # 3. Finish with production deployment
-jupyter notebook Lecture_3.ipynb
+uv run jupyter notebook Lecture_3.ipynb
 ```
 
 ### **For Project-Focused Learners:**
 ```bash
 # Start with the capstone project template
 cd "Regression Capstone Projects"
+
 # Create your project and refer to lectures as needed
+# Study working examples from other students for inspiration
 ```
 
 ### **Run Your Applications:**
 ```bash
-# Streamlit App
+# Streamlit app
 uv run streamlit run app.py
 
-# Or using Gradio
-python app_2.py
+# Or the Gradio alternative
+uv run python app_2.py
 ```
+
+> 💡 **First time here?** Run `uv sync` from the SAIR root first to install dependencies.
 
 ---
 
@@ -142,7 +151,7 @@ Regression Capstone Projects/
     ├── app.py                  # Streamlit deployment
     ├── utils.py                # Helper functions
     ├── data/                   # Your dataset
-    ├── models/                 # Trained models
+    ├── models/                 # Trained models (gitignored)
     ├── experiments/            # MLflow tracking
     └── README.md               # Project documentation
 ```
@@ -158,29 +167,33 @@ Regression Capstone Projects/
 
 ## 🌟 Student Success Stories
 
-Explore amazing projects built by SAIR learners:
+Explore real capstone projects built by SAIR learners — the **`Regression Capstone Projects/`** folder contains working examples across different domains:
 
-- **🚀 NASA Jet Engine Predictive Maintenance** - Remaining Useful Life prediction
-- **🏥 Health Score Prediction** - Healthcare analytics with synthetic data
-- **🚗 Car Price Prediction** - Automotive market analysis
-- **🌾 Agricultural Yield Optimization** - Climate impact modeling
-- **✨ Crop Yield Estimation ✨** - Estimate Yield per Acre for Indians farmer using survey collected data.
-- **⚡ Combined Cycle Power Plant Energy Output Prediction** – Power generation prediction using operational and ambient condition data
+| Student | Project | Domain |
+|---------|---------|--------|
+| **abdelhadi_osama** | NASA Jet Engine Predictive Maintenance | Aerospace / RUL prediction |
+| **sihambashir** | Health Score Prediction | Healthcare analytics |
+| **RandaAshour** | Car Price Prediction | Automotive market |
+| **Azza_Project** | Bike Sharing Demand Prediction | Urban mobility |
+| **MohanadAhmed (Mo. A)** | Power Plant Energy Output | Energy / power generation |
+| **MAhmedloka** | Bike Rental Demand | Time-series regression |
+| **Ashraf Alhaj** | Insurance Cost Prediction | Actuarial / insurance |
+| **Ahmed Alsafi** | Insurance Cost Prediction | Actuarial / insurance |
+| **alaa_ibrahim** | Diabetes Progression Prediction | Medical / clinical |
+| **Awab.project** | Medical Insurance Cost | Healthcare / insurance |
+| **Mohammed_Kamal** | Gas Price Analysis | Energy market |
+| **Tarig_Yaegab** | Sales Prediction | Retail / business |
+| **Abdelrhman** | Sales Prediction | Retail / business |
+| **ABDALAZEZ** | Advertising Analysis | Marketing analytics |
+| **AmSalma** | Regression Project | (Multi-domain) |
+| **fristpro** | First Project | (Beginner exploration) |
 
-**Location:** `Regression Capstone Projects/`
+**Featured Project:** ✨ **Crop Yield Estimation** ✨ — estimating yield per acre for Indian farmers using survey-collected data.
 
-<div align='center'>
+- 🔗 [Project Link](https://github.com/Ibraheem-Al-hafith/AgriYield_Pipeline)
+- 🎥 [Demo Video](https://github.com/user-attachments/assets/c72174a2-800f-458c-9602-55dfaaf037df)
 
-## **✨ Crop Yield Estimation ✨**
-
-</div>
-
-### Project [Link](https://github.com/Ibraheem-Al-hafith/AgriYield_Pipeline)
-
-### 📺 Demo Video 📺 :
-
-https://github.com/user-attachments/assets/c72174a2-800f-458c-9602-55dfaaf037df
-
+> 💡 **Study these projects** before building your own — see how different students structure their capstones, choose datasets, and deploy solutions.
 
 ---
 
@@ -216,7 +229,7 @@ Share your progress, get code reviews, and join live sessions with instructors a
 → Explore [`Regression Capstone Projects/`](Regression%20Capstone%20Projects/)
 
 ### **Ready to advance?**
-→ Continue to [Module 2: Classification & Pipelines](../2_Classification/README.md)
+→ Continue to [Module 2: Classification & Production Pipelines](../2_Classification/README.md)
 
 ---
 
@@ -227,11 +240,13 @@ Share your progress, get code reviews, and join live sessions with instructors a
 | [`app.py`](app.py) | Streamlit deployment template | Building your UI |
 | [`app_2.py`](app_2.py) | Gradio alternative interface | Rapid prototyping |
 | [`utils.py`](utils.py) | Preprocessing helpers | Feature engineering |
+| [`utils2.py`](utils2.py) | Extended utilities | Advanced preprocessing |
 | [`Resources/`](Resources/) | Deep dive readings | Advanced concepts |
+| [`streamlit_app.png`](streamlit_app.png) | UI reference screenshot | Design inspiration |
 
 ---
 
-> **"السير" - "Walking on a road"**  
+> **"السير" — "Walking on a road"**  
 > *Your first ML model is the hardest. This module makes it achievable and production-ready.*
 
 **Build something amazing! 🚀**
@@ -242,7 +257,8 @@ Share your progress, get code reviews, and join live sessions with instructors a
 
 ---
 
-## 🗂️ **Module Structure:**
+## 🗂️ Module Structure
+
 ```
 1_Regression/
 │
@@ -250,12 +266,14 @@ Share your progress, get code reviews, and join live sessions with instructors a
 ├── 🎯 Lecture_1.ipynb                    # Linear Regression from Scratch
 ├── 🚀 Lecture_2.ipynb                    # Sklearn + Production Tools
 ├── 📊 Lecture_3.ipynb                    # Deployment & MLflow
-├── 🖼️ assets/                           # Images & diagrams
-├── 🔧 utils.py                          # Helper functions
-├── 🎨 app.py                            # Gradio application
-├── ⚡ app_2.py                          # another application
-├── 📈 experiments/                      # MLflow tracking (run the notebooks for this to generate)
-├── 🤖 models/                           # Saved models (run the notebooks for this to generate)
-├── 📖 Resources/                        # Additional readings
-└── 💼 Regression Capstone Projects/     # Student work showcase
+├── 🖼️ assets/                            # Images & diagrams
+├── 🔧 utils.py                           # Helper functions
+├── 🔧 utils2.py                          # Extended utilities
+├── 🎨 app.py                             # Streamlit application
+├── ⚡ app_2.py                           # Gradio application
+├── 📸 streamlit_app.png                  # UI reference
+├── 📖 Resources/                         # Additional readings
+│   ├── End_to_End_ML_Project.pdf
+│   └── Universal_Workflow_of_ML.pdf
+└── 💼 Regression Capstone Projects/      # Student work showcase (16+ projects)
 ```

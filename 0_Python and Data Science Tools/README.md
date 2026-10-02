@@ -1,12 +1,15 @@
-# Module 0: Python Foundations 🐍
 
-**Your First Step on the Road to AI Mastery**
+# 🐍 Module 0: Python Foundations
+
+**Your First Step on the Road to ML Engineering Mastery**
+
+> 📌 **Part of the [SAIR Jr. ML Engineering Track](../README.md)** — bottom-up, depth-first. We build the foundation that lasts years, not the framework of the month.
 
 **📍 Location:** `0_Python and Data Science Tools/`  
 **🎯 Prerequisite:** None — Start here!  
-**➡️ Next Module:** [Module 1: Regression](../1_Regression/README.md)
+**➡️ Next Module:** [Module 1: Regression Mastery](../1_Regression/README.md)
 
-**Welcome to SAIR!** This is where your AI journey begins. Whether you're completely new to programming or looking to strengthen your fundamentals, this module will give you the Python skills needed to start building real machine learning systems.
+**Welcome to SAIR!** This is where your ML engineering journey begins. Whether you're completely new to programming or looking to strengthen your fundamentals, this module will give you the Python skills needed to start building real machine learning systems — from the ground up.
 
 ---
 
@@ -37,7 +40,7 @@
 
 </div>
 
-These are the **essential tools** used by every data scientist and ML engineer worldwide. Master them here, use them everywhere.
+These are the **essential tools** used by every ML engineer worldwide. Master them here, use them everywhere.
 
 ---
 
@@ -49,6 +52,8 @@ These are the **essential tools** used by every data scientist and ML engineer w
 | **`numpy.ipynb`** | Numerical Computing | 4–5 hours | Create/reshape arrays, use broadcasting, perform matrix math for ML |
 | **`pandas.ipynb`** | Data Analysis | 4–5 hours | Load CSVs, clean data, group/filter/merge DataFrames |
 | **`matplot.ipynb`** | Data Visualization | 3–4 hours | Plot loss curves, histograms, scatter plots, heatmaps |
+
+---
 
 ## 🗺️ Your Learning Journey
 
@@ -80,9 +85,9 @@ These are the **essential tools** used by every data scientist and ML engineer w
 
 > **"Learn enough to build, then build to learn more."**
 
-At SAIR, we believe in **progressive mastery**. You don't need to be an expert in everything before you start creating. These notebooks are your **foundation and reference library** - tools you'll return to again and again as you grow.
+At SAIR, we believe in **progressive mastery**. You don't need to be an expert in everything before you start creating. These notebooks are your **foundation and reference library** — tools you'll return to again and again as you grow.
 
-**The road to AI mastery is long, but every expert started exactly where you are now.**
+**The road to ML engineering mastery is long, but every expert started exactly where you are now.**
 
 ---
 
@@ -104,6 +109,8 @@ uv run jupyter notebook SAIR_Lecture_0.ipynb
 # Use other notebooks as reference during projects
 ```
 
+> 💡 **First time here?** Run `uv sync` from the SAIR root first to install dependencies.
+
 ---
 
 ## 🤝 Get Help & Connect
@@ -121,7 +128,7 @@ Our community of learners and mentors is here to support you every step of the w
 ### **Just starting?**
 → Begin with [`SAIR_Lecture_0.ipynb`](SAIR_Lecture_0.ipynb)
 
-### **Ready to build?** 
+### **Ready to build?**
 → Jump to [Module 1: Regression](../1_Regression/README.md)
 
 ### **Want to deepen your skills?**
@@ -151,25 +158,31 @@ Our community of learners and mentors is here to support you every step of the w
 
 ---
 
-> **"السير" - "Walking on a road"**  
-> *Every master was once a beginner. Your journey to AI excellence starts here.*
+> **"السير" — "Walking on a road"**  
+> *Every master was once a beginner. Your journey to ML engineering excellence starts here.*
 
 **Welcome to the SAIR family! 🌟**
 
 ---
 
-## 🗂️ **Module Structure:**
-```
-0_Python and Data Science Tools/
-│
-├── 📚 README.md                          # This guide
-├── 🎯 SAIR_Lecture_0.ipynb               # Start Here - Python Basics
-├── 🚀 numpy.ipynb                        # Numerical Computing Mastery
-├── 📊 pandas.ipynb                       # Data Analysis Mastery  
-├── 📈 matplot.ipynb                      # Visualization Mastery
-└── 🖼️ assets/
-    
-```
+**🔜 Next Step:** [Module 1: Regression Mastery](../1_Regression/README.md)
 
 ---
 
+## 🗂️ Module Structure
+
+```
+0_Python and Data Science Tools/
+│
+├── 📚 README.md                    # This guide
+├── 🎯 SAIR_Lecture_0.ipynb         # Start here — Python basics
+├── 🚀 numpy.ipynb                  # Numerical computing mastery
+├── 📊 pandas.ipynb                 # Data analysis mastery
+├── 📈 matplot.ipynb                # Visualization mastery
+└── 🖼️ assets/                      # Figures and images used in notebooks
+    ├── research_figure.jpg
+    ├── research_figure.pdf
+    ├── research_figure.png
+    ├── research_figure.svg
+    └── SAIR.jpg
+```

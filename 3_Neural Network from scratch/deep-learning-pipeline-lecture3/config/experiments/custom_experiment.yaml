@@ -1,0 +1,49 @@
+# Custom experiment configuration
+data:
+  datasets:
+    enabled: ["mnist", "cifar10"]
+  
+models:
+  architectures:
+    simple_dnn:
+      layer_sizes: [null, 128, 10]
+      activations: ["relu", "softmax"]
+      learning_rate: 0.001
+      l2_lambda: 0.0001
+      epochs: 20
+      batch_size: 64
+    
+    deep_dnn:
+      layer_sizes: [null, 512, 256, 128, 10]
+      activations: ["relu", "relu", "relu", "softmax"]
+      learning_rate: 0.0005
+      l2_lambda: 0.001
+      epochs: 30
+      batch_size: 32
+
+training:
+  random_seed: 42
+  verbose: true
+
+preprocessing:
+  validation_split: 0.1
+  normalize: true
+  flatten: true
+  rgb_to_grayscale: true
+
+evaluation:
+  save_visualizations: true
+  comparison_plots: true
+
+directories:
+  base: "dl_pipeline_custom"
+  data: "dl_pipeline_custom/data"
+  models: "dl_pipeline_custom/models"
+  results: "dl_pipeline_custom/results"
+  visualizations: "dl_pipeline_custom/visualizations"
+  logs: "dl_pipeline_custom/logs"
+
+logging:
+  level: "DEBUG"
+  file: "dl_pipeline_custom/logs/pipeline.log"
+  console: true

@@ -1,14 +1,32 @@
-# Module 5: GPT from Scratch 🧠
 
-**Building a Large Language Model — No Shortcuts, No Black Boxes**
+# 🧠 Module 5: GPT from Scratch
+
+**Building a Large Language Model from First Principles — No Shortcuts, No Black Boxes, No `from_pretrained`**
+
+> 📌 **Part of the [SAIR Jr. ML Engineering Track](../README.md)** — bottom-up, depth-first. We build the foundation that lasts years, not the framework of the month.
 
 **📍 Location:** `5_GPT from scratch/`  
 **🎯 Prerequisite:** [Module 4: Applied Deep Learning with PyTorch](../4_Applied%20Deep%20Learning%20with%20PyTorch/README.md)  
-**➡️ Capstone Project:** [SAIR miniGPT](https://github.com/SAIR-Org/miniGPT) — deploy everything you built as a full-stack system
+**➡️ Capstone:** [SAIR miniGPT](https://github.com/SAIR-Org/miniGPT) — deploy everything you built as a full-stack system
 
 Welcome to **Module 5** of **SAIR** — the deepest technical challenge of the entire track. You will build a GPT-style language model from absolute scratch: every tokenizer, every attention head, every training loop, and every fine-tuning step. By the end you will have a working LLM trained on real text and fine-tuned for two downstream tasks.
 
-No HuggingFace `from_pretrained`. No shortcuts. Just PyTorch and first principles.
+**No HuggingFace `from_pretrained`. No shortcuts. Just PyTorch and first principles.**
+
+---
+
+## 🎯 Is This Module For You?
+
+### ✅ **Complete this module if:**
+- You've completed Module 4 and are comfortable with PyTorch
+- You want to understand transformers at the deepest possible level
+- You want to be able to explain every operation inside GPT-2
+- You're ready for the most technically demanding module in the track
+
+### 🚀 **Review and continue if you're experienced:**
+- You've used LLM APIs but want to understand what's actually inside
+- You've worked with transformers but never built one from scratch
+- You want to add LLM fundamentals and fine-tuning to your toolkit
 
 ---
 
@@ -53,7 +71,7 @@ Raw Text (Harry Potter corpus)
 
 | Topic | What You Build |
 |-------|---------------|
-| Corpus loading | Read all 7 Harry Potter books from local `.txt` files |
+| Corpus loading | Read all Harry Potter books from local `.txt` files |
 | Custom tokenizer | `TokenizerV1` and `TokenizerV2` from scratch (regex-based) |
 | Production tokenizer | `tiktoken` BPE — same tokenizer used in GPT-2 and GPT-4 |
 | Sliding window | Input/target pair generation for next-token prediction |
@@ -96,7 +114,7 @@ Raw Text (Harry Potter corpus)
 
 ---
 
-### Notebook 4 — Training Loop
+### Lecture 4 — Training Loop
 📓 `4.TRAIN.ipynb` · **⏱ 6–8 hours** (+ training time)
 
 Five trainer versions, each a direct upgrade of the last:
@@ -111,7 +129,7 @@ Five trainer versions, each a direct upgrade of the last:
 
 ---
 
-### Notebook 5 — Inference & Text Generation
+### Lecture 5 — Inference & Text Generation
 📓 `5.INFERENCE.ipynb` · **⏱ 3–4 hours**
 
 Loads pretrained GPT-2 weights and builds four generation strategies from scratch:
@@ -179,16 +197,26 @@ Fine-tune the pretrained GPT to follow instructions in a prompt-response format.
 
 ---
 
-## 🔧 Troubleshooting
+## 🎯 Learning Outcomes
 
-| Problem | Likely Cause | Fix |
-|---------|-------------|-----|
-| `CUDA out of memory` | Batch size too large | Reduce `batch_size` in config; try 4 or 8 |
-| Generation produces only repetitions | Untrained weights or greedy decoding | Use temperature sampling: `temperature=1.0, top_k=50` |
-| Loss not decreasing after epoch 1 | Learning rate too high | Try `lr=3e-4` with `AdamW` and warmup |
-| `AssertionError: shape mismatch` in weight loading | Wrong `qkv_bias` setting | Set `qkv_bias=True` when loading pretrained GPT-2 weights |
-| `tiktoken` encoding error | Non-UTF-8 characters in corpus | Strip with `text.encode('utf-8', errors='ignore').decode()` |
-| Checkpoint not found | Wrong path or never saved | Check `config.py` for `checkpoint_dir`; run training first |
+After completing this module you will be able to:
+
+- **Explain** how every component of a transformer works — not just use it
+- **Implement** multi-head causal attention from a blank file
+- **Build** the full GPT-2 architecture matching published parameter counts
+- **Train** a language model on a real corpus from scratch
+- **Fine-tune** a pretrained LLM for classification and instruction following
+- **Architect** a modular ML pipeline separating data, model, training, and serving
+
+---
+
+## 💡 Our Learning Philosophy
+
+> **"You haven't truly understood a model until you've trained one yourself."**
+
+At SAIR, we believe LLMs should not be a black box. This module takes you past the API into the architecture — every head, every gradient, every sampling strategy. By the end, you won't just *use* LLMs. You'll understand exactly what happens inside them.
+
+**This is where you stop being an LLM user and start being an LLM engineer.**
 
 ---
 
@@ -206,17 +234,39 @@ Fine-tune the pretrained GPT to follow instructions in a prompt-response format.
 
 ## 🚀 Getting Started
 
+### **For Sequential Learners (Recommended):**
 ```bash
 # From the SAIR root
 cd "5_GPT from scratch"
 
-# Run a lecture notebook
+# Run Lecture 1
 uv run jupyter notebook 1.DATA.ipynb
+
+# Then progress through 2, 3, 4, 5 in order
+uv run jupyter notebook 2.ATTENTION.ipynb
+uv run jupyter notebook 3.GPT.ipynb
+uv run jupyter notebook 4.TRAIN.ipynb
+uv run jupyter notebook 5.INFERENCE.ipynb
 ```
 
-Once you finish all lectures, move to the capstone — **[SAIR miniGPT](https://github.com/SAIR-Org/miniGPT)** — where everything gets packaged into a real CLI, cloud training, and web UI.
+### **For PyTorch newcomers:**
+```bash
+# If new to PyTorch, start here first
+uv run jupyter notebook A0.PYTORCH_CRASH_COURSE.ipynb
 
-**Data:** the Harry Potter books are already in the repo at  
+# Then proceed through the 5 core notebooks
+```
+
+### **For fine-tuning focus:**
+```bash
+# After completing the 5 core notebooks
+uv run jupyter notebook A1.SFT_Text_Classification.ipynb
+uv run jupyter notebook A2.SFT_Instruction_Following.ipynb
+```
+
+> 💡 **First time here?** Run `uv sync` from the SAIR root first to install dependencies.
+
+**Data:** the Harry Potter corpus is already in the repo at  
 `4_Applied Deep Learning with PyTorch/3_Sequence and NLP/harry_potter_txt/`
 
 No downloads required.
@@ -227,52 +277,107 @@ No downloads required.
 
 ```
 5_GPT from scratch/
-├── 1.DATA.ipynb                      # Notebook 1 — tokenization & data pipeline
-├── 2.ATTENTION.ipynb                 # Notebook 2 — attention mechanisms
-├── 3.GPT.ipynb                       # Notebook 3 — full GPT architecture
-├── 4.TRAIN.ipynb                     # Notebook 4 — training loop (V0→V4)
-├── 5.INFERENCE.ipynb                 # Notebook 5 — inference & generation (V0→V3)
-├── A0.PYTORCH_CRASH_COURSE.ipynb     # Appendix 0 — PyTorch crash course
-├── A1.SFT_Text_Classification.ipynb  # Appendix 1 — SFT: classification
-├── A2.SFT_Instruction_Following.ipynb# Appendix 2 — SFT: instruction following
-├── UTILS/
-│   ├── model.py                      # GPTModel (shared by all notebooks)
-│   ├── generate.py                   # generation utilities
-│   ├── load_weights.py               # HuggingFace weight loader
-│   └── finetune_utils.py             # SFT helpers
-├── data/                             # Generated by Notebook 1 (gitignored)
-│   ├── train_ids.bin                 # ~1.9M tokens (90% of corpus)
-│   ├── val_ids.bin                   # ~148K tokens (7%)
-│   └── test_ids.bin                  # ~61K tokens (3%)
-├── images/                           # Diagrams used by appendix notebooks
-├── Resources/
-│   ├── raschka_llm_from_scratch.pdf          # Primary textbook
-│   ├── raschka_llm_from_scratch_cover.jpg    # Book cover
-│   ├── raschka_llm_exercises.pdf             # Exercise companion
-│   └── attention_is_all_you_need.pdf         # Vaswani et al. 2017
-└── README.md
+│
+├── 📚 README.md                              # This guide
+├── 📖 0.Introduction.md                      # Module introduction & overview
+│
+├── 🎯 Core Notebooks
+│   ├── 1.DATA.ipynb                          # Tokenization & data pipeline
+│   ├── 2.ATTENTION.ipynb                     # Attention mechanisms
+│   ├── 3.GPT.ipynb                           # Full GPT architecture
+│   ├── 4.TRAIN.ipynb                         # Training loop (V0→V4)
+│   └── 5.INFERENCE.ipynb                     # Inference & generation (V0→V3)
+│
+├── 📎 Appendix Notebooks
+│   ├── A0.PYTORCH_CRASH_COURSE.ipynb         # PyTorch crash course
+│   ├── A1.SFT_Text_Classification.ipynb      # SFT: classification
+│   └── A2.SFT_Instruction_Following.ipynb    # SFT: instruction following
+│
+├── 🔧 UTILS/                                 # Shared code across notebooks
+│   ├── model.py                              # GPTModel (shared)
+│   ├── generate.py                           # Generation utilities
+│   ├── load_weights.py                       # HuggingFace weight loader
+│   ├── finetune_utils.py                     # SFT helpers
+│   └── __init__.py
+│
+├── 📊 Data (generated by Notebook 1 — gitignored)
+│   └── data/
+│       ├── train_ids.bin                     # ~1.9M tokens (90% of corpus)
+│       ├── val_ids.bin                       # ~148K tokens (7%)
+│       └── test_ids.bin                      # ~61K tokens (3%)
+│
+├── 🎨 Visual Assets
+│   ├── GPT_Visual_Guide.html                 # Interactive architecture guide
+│   ├── gpt_viz.py                            # Visualization generator
+│   ├── model.py                              # Top-level model export
+│   └── images/
+│       ├── classification_finetune.png
+│       ├── gpu_table.PNG
+│       └── ollama.PNG
+│
+├── 💾 Pretrained Weights (gitignored — re-downloadable)
+│   ├── checkpoints/
+│   │   └── models--openai-community--gpt2/   # HuggingFace cached GPT-2
+│   └── gpt2_weights/124M/                    # Original OpenAI GPT-2 weights
+│
+└── 📚 Resources/
+    ├── raschka_llm_from_scratch.pdf          # Primary textbook
+    ├── raschka_llm_from_scratch_cover.png    # Book cover
+    ├── raschka_llm_exercises.pdf             # Exercise companion
+    └── attention_is_all_you_need.pdf         # Vaswani et al. 2017
 ```
 
 ---
 
-## 🎯 Learning Outcomes
+## 🏁 Capstone — SAIR miniGPT
 
-After completing this module you will be able to:
+After completing all lectures, the capstone packages everything into a real, deployable system:
 
-- **Explain** how every component of a transformer works — not just use it
-- **Implement** multi-head causal attention from a blank file
-- **Build** the full GPT-2 architecture matching published parameter counts
-- **Train** a language model on a real corpus from scratch
-- **Fine-tune** a pretrained LLM for classification and instruction following
-- **Architect** a modular ML pipeline separating data, model, training, and serving
+| What | Details |
+|------|---------|
+| 🖥️ `sair` CLI | `prepare` → `train` → `generate` → `ui` in one command |
+| ☁️ Modal cloud training | A100 GPU training with W&B live loss curves |
+| 🌐 Web UI | Chat with your trained model at `localhost:7860` |
+| 🔁 Resume training | Continue from any saved checkpoint |
+| 🚀 Pretrained GPT-2 | Load OpenAI weights (124M → 1.5B) with no training |
+
+**→ [SAIR miniGPT repo](https://github.com/SAIR-Org/miniGPT)**
+
+Every function in miniGPT (`GPTModel`, `generateV0`→`V3`, `trainerV3`, beam search) maps **1-to-1 to a notebook cell you wrote in this module.** The capstone is not a new project — it's your code, productionised.
+
+---
+
+## 🔧 Troubleshooting
+
+| Problem | Likely Cause | Fix |
+|---------|-------------|-----|
+| `CUDA out of memory` | Batch size too large | Reduce `batch_size` in config; try 4 or 8 |
+| Generation produces only repetitions | Untrained weights or greedy decoding | Use temperature sampling: `temperature=1.0, top_k=50` |
+| Loss not decreasing after epoch 1 | Learning rate too high | Try `lr=3e-4` with `AdamW` and warmup |
+| `AssertionError: shape mismatch` in weight loading | Wrong `qkv_bias` setting | Set `qkv_bias=True` when loading pretrained GPT-2 weights |
+| `tiktoken` encoding error | Non-UTF-8 characters in corpus | Strip with `text.encode('utf-8', errors='ignore').decode()` |
+| Checkpoint not found | Wrong path or never saved | Check `config.py` for `checkpoint_dir`; run training first |
+
+---
+
+## 🤝 Get Help & Connect
+
+Building GPT from scratch is the most demanding module in the track — but also the most rewarding. We're here to help.
+
+[![Telegram](https://img.shields.io/badge/Telegram-Join_SAIR_Community-blue?logo=telegram)](https://t.me/+jPPlO6ZFDbtlYzU0)
+
+Join our community for:
+- 🧮 Help with attention mathematics and gradient derivations
+- 💻 Code reviews for your trainer and generation implementations
+- 🚀 Guidance on training efficiency and DDP setup
+- 🎯 Feedback on your SFT fine-tuning experiments
+- 📚 Study groups focused on transformer architecture
 
 ---
 
 ## 📚 Resources
 
-All materials are in `Resources/` — read in parallel with the lectures, not after.
-
----
+All materials are in `Resources/` — **read in parallel with the lectures, not after.**
 
 ### 📖 Primary Textbook — Read in Parallel
 
@@ -328,26 +433,30 @@ The paper that started everything. Read it alongside Lecture 2 (Attention). The 
 
 ---
 
+## 🎯 Ready to Begin?
+
+### **New to PyTorch?**
+→ Start with [`A0.PYTORCH_CRASH_COURSE.ipynb`](A0.PYTORCH_CRASH_COURSE.ipynb)
+
+### **Ready to begin?**
+→ Start with [`1.DATA.ipynb`](1.DATA.ipynb)
+
+### **Want to see the architecture visually?**
+→ Open [`GPT_Visual_Guide.html`](GPT_Visual_Guide.html) in your browser
+
+### **Ready for the capstone?**
+→ Explore [SAIR miniGPT](https://github.com/SAIR-Org/miniGPT)
+
+### **Ready to finish the track?**
+→ Return to the [main SAIR Jr. README](../README.md) for the Capstone requirements
+
 ---
 
-## 🏁 Capstone — SAIR miniGPT
-
-After completing all lectures, the capstone packages everything into a real, deployable system:
-
-| What | Details |
-|------|---------|
-| 🖥️ `sair` CLI | `prepare` → `train` → `generate` → `ui` in one command |
-| ☁️ Modal cloud training | A100 GPU training with W&B live loss curves |
-| 🌐 Web UI | Chat with your trained model at `localhost:7860` |
-| 🔁 Resume training | Continue from any saved checkpoint |
-| 🚀 Pretrained GPT-2 | Load OpenAI weights (124M → 1.5B) with no training |
-
-**→ [SAIR miniGPT repo](https://github.com/SAIR-Org/miniGPT)**
-
-Every function in miniGPT (`GPTModel`, `generateV0`→`V3`, `trainerV3`, beam search) maps 1-to-1 to a notebook cell you wrote in this module. The capstone is not a new project — it's your code, productionised.
-
----
-
-> *"You haven't truly understood a model until you've trained one yourself."*
+> **"السير" — "Walking on a road"**  
+> *You haven't truly understood a model until you've trained one yourself.*
 
 **Module 5 of the SAIR Jr. Certification Track 🇸🇩**
+
+---
+
+**🔜 Next Step:** Complete the [Capstone Project](../README.md#-capstone-project-where-sudanese-innovation-meets-global-standards)

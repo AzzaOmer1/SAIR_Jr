@@ -1,12 +1,15 @@
-# Module 3: Neural Networks from Scratch 🧠
+
+# 🧠 Module 3: Neural Networks from Scratch
 
 **Building Deep Learning Systems from Mathematical Foundations to Production Pipelines**
+
+> 📌 **Part of the [SAIR Jr. ML Engineering Track](../README.md)** — bottom-up, depth-first. We build the foundation that lasts years, not the framework of the month.
 
 **📍 Location:** `3_Neural Network from scratch/`  
 **🎯 Prerequisite:** [Module 2: Classification & Production Pipelines](../2_Classification/README.md)  
 **➡️ Next Module:** [Module 4: Applied Deep Learning with PyTorch](../4_Applied%20Deep%20Learning%20with%20PyTorch/README.md)
 
-Welcome to the **Neural Networks from Scratch Module** of **SAIR** – where you'll build complete deep learning systems using only **pure NumPy**. From individual neurons to production pipelines, you'll understand every mathematical operation and engineering decision behind modern deep learning.
+Welcome to the **Neural Networks from Scratch Module** of **SAIR** — where you'll build complete deep learning systems using only **pure NumPy**. From individual neurons to production pipelines, you'll understand every mathematical operation and engineering decision behind modern deep learning.
 
 ---
 
@@ -36,7 +39,7 @@ Welcome to the **Neural Networks from Scratch Module** of **SAIR** – where you
 
 </div>
 
-**Pure mathematical implementations** – no deep learning frameworks, just understanding.
+**Pure mathematical implementations** — no deep learning frameworks, just understanding.
 
 ---
 
@@ -49,11 +52,15 @@ Welcome to the **Neural Networks from Scratch Module** of **SAIR** – where you
 | **`nn3.ipynb`** | Complete Library Design | 10–12 hours | Build a clean `Dense/ReLU/Softmax/SGD` library others can import and use |
 | **`DeepPip/`** | End-to-End Pipeline (Simple) | 4–5 hours | Run a full data→train→evaluate→UI pipeline with your library |
 | **`deep-learning-pipeline-lecture3/`** | Production System (Advanced) | 5–6 hours | Use CLI tools, config files, experiment tracking in a team-style project |
+| **`nn_capstone_example/`** | Capstone Reference | 3–4 hours | See the target structure for your own capstone submission |
 
 > **Which pipeline should I use?**
 > - **Beginners → `DeepPip/`**: clean, minimal, runs in one command
 > - **Production practice → `deep-learning-pipeline-lecture3/`**: CLI flags, modular scripts, closer to real-world engineering
+> - **Capstone planning → `nn_capstone_example/`**: reference layout for your submission
 > - **Recommended:** start with `DeepPip/`, then explore the advanced one once your library works
+
+---
 
 ## 🗺️ Your Learning Journey
 
@@ -131,32 +138,32 @@ At SAIR, we believe **mathematical understanding is non-negotiable** for serious
 ### **For Sequential Learners (Recommended):**
 ```bash
 # 1. Build neural network fundamentals
-jupyter notebook nn.ipynb
+uv run jupyter notebook nn.ipynb
 
 # 2. Implement advanced techniques
-jupyter notebook nn2.ipynb
+uv run jupyter notebook nn2.ipynb
 
 # 3. Design your own library
-jupyter notebook nn3.ipynb
+uv run jupyter notebook nn3.ipynb
 
 # 4. Study pipeline architecture
 cd DeepPip
-python run_pipeline.py --mode all
+uv run python run_pipeline.py --mode all
 
 # 5. Examine advanced production patterns
-cd deep-learning-pipeline-lecture3
-python scripts/run_pipeline.py --run-mode data
+cd ../deep-learning-pipeline-lecture3
+uv run python scripts/run_pipeline.py
 ```
 
 ### **For Project-Focused Learners:**
 ```bash
 # Start with a working pipeline to understand goals
 cd DeepPip
-python run_pipeline.py --mode all
-python launch_ui.py
+uv run python run_pipeline.py --mode all
+uv run python gradio_app.py
 
 # Then build the components yourself
-jupyter notebook nn.ipynb  # Build the neural network
+uv run jupyter notebook ../nn.ipynb  # Build the neural network
 # Extend with nn2.ipynb and nn3.ipynb
 
 # Finally, build your own pipeline
@@ -166,14 +173,16 @@ jupyter notebook nn.ipynb  # Build the neural network
 ### **For Library Builders:**
 ```bash
 # Focus on clean architecture
-jupyter notebook nn3.ipynb  # Study library design patterns
+uv run jupyter notebook nn3.ipynb  # Study library design patterns
 
 # Test with simple problems
-python -c "import numpy as np; from your_library import Dense, ReLU, SGD"
+uv run python -c "import numpy as np; from your_library import Dense, ReLU, SGD"
 
 # Integrate into pipeline
 # Build a minimal pipeline around your library
 ```
+
+> 💡 **First time here?** Run `uv sync` from the SAIR root first to install dependencies.
 
 ---
 
@@ -193,11 +202,11 @@ class Dense:
         self.biases = None
         self.output = None
         self.inputs = None
-    
+
     def forward(self, inputs):
         """Implement forward pass: inputs @ weights + biases"""
         pass
-    
+
     def backward(self, dvalues):
         """Implement backward pass: compute gradients"""
         pass
@@ -256,51 +265,33 @@ class Sequential:
 ```
 your_neural_pipeline/
 ├── config/              # Experiment configurations
-│   └── config.yaml     # Hyperparameters, architectures, datasets
+│   └── config.yaml      # Hyperparameters, architectures, datasets
 ├── src/                 # Your neural network library
-│   ├── layers/         # Dense, activations, etc.
-│   ├── losses/         # Loss functions
-│   ├── optimizers/     # SGD, Adam, etc.
-│   ├── models/         # Model composition
-│   └── training/       # Training loops
-├── pipeline/           # End-to-end system
-│   ├── data/           # Data loading & preprocessing
-│   ├── train/          # Training orchestration
-│   ├── evaluate/       # Metrics & visualization
-│   └── serve/          # Inference & UI
-├── experiments/        # Experiment results
-├── models/             # Saved model weights
-└── scripts/            # CLI entry points
+│   ├── layers/          # Dense, activations, etc.
+│   ├── losses/          # Loss functions
+│   ├── optimizers/      # SGD, Adam, etc.
+│   ├── models/          # Model composition
+│   └── training/        # Training loops
+├── pipeline/            # End-to-end system
+│   ├── data/            # Data loading & preprocessing
+│   ├── train/           # Training orchestration
+│   ├── evaluate/        # Metrics & visualization
+│   └── serve/           # Inference & UI
+├── experiments/         # Experiment results
+├── models/              # Saved model weights (gitignored)
+└── scripts/             # CLI entry points
 ```
 
 #### **Core Pipeline Features:**
-1. **Data Pipeline**
-   - Load MNIST, Fashion-MNIST, CIFAR-10 datasets
-   - Normalization and preprocessing
-   - Train/validation/test splits
-   - Batch generation for training
-
-2. **Training System**
-   - Multiple architecture configurations
-   - Hyperparameter management
-   - Training progress logging
-   - Model checkpointing
-
-3. **Evaluation Framework**
-   - Accuracy, loss, confusion matrices
-   - Comparative analysis across models
-   - Visualization of training curves
-   - Error analysis and insights
-
-4. **Serving & UI**
-   - Interactive web interface (Gradio/Streamlit)
-   - Real-time predictions on uploaded images
-   - Model comparison capabilities
-   - Sample testing and visualization
+1. **Data Pipeline** — Load MNIST, Fashion-MNIST, CIFAR-10; normalization; train/val/test splits; batching
+2. **Training System** — Multiple architecture configurations; hyperparameter management; training logs; checkpoints
+3. **Evaluation Framework** — Accuracy, loss, confusion matrices; comparative analysis; visualizations
+4. **Serving & UI** — Interactive Gradio/Streamlit app; real-time predictions; model comparison
 
 #### **Reference Implementations:**
 - **`DeepPip/`**: Complete working example with clean separation
 - **`deep-learning-pipeline-lecture3/`**: Advanced system with CLI tools and comprehensive features
+- **`nn_capstone_example/`**: Reference structure for your own capstone submission
 
 ---
 
@@ -370,7 +361,7 @@ class Adam:
 ```python
 # Simple vs Deep architectures you'll compare:
 simple_mlp = [784, 64, 10]           # 1 hidden layer
-medium_mlp = [784, 128, 64, 10]      # 2 hidden layers  
+medium_mlp = [784, 128, 64, 10]      # 2 hidden layers
 deep_mlp = [784, 256, 128, 64, 10]   # 3 hidden layers
 
 # Parameter counts and performance trade-offs:
@@ -399,7 +390,7 @@ deep_mlp = [784, 256, 128, 64, 10]   # 3 hidden layers
 
 ### **Production Patterns:**
 - **Modular Design**: Separation of concerns between components
-- **Configuration Management**: YAML/JSON for experiment settings
+- **Configuration Management**: YAML for experiment settings
 - **Logging & Monitoring**: Training progress and system metrics
 - **Reproducibility**: Seed control and experiment tracking
 - **User Experience**: Intuitive interfaces for different user types
@@ -453,12 +444,13 @@ Join our community for:
 | `nn3.ipynb` | Library architecture | Modular design, API patterns, training systems |
 | `DeepPip/` | Complete pipeline example | End-to-end system design, basic UI integration |
 | `deep-learning-pipeline-lecture3/` | Production system | CLI tools, experiment tracking, advanced UI |
+| `nn_capstone_example/` | Capstone reference | Project structure for your own submission |
 
 ### **Additional Resources:**
-- **[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)** - Michael Nielsen (free online book)
-- **[CS231n Course Notes](http://cs231n.github.io/)** - Stanford's deep learning course
-- **[The Matrix Calculus You Need For Deep Learning](https://arxiv.org/abs/1802.01528)** - Essential reference for gradient calculations
-- **[NumPy Documentation](https://numpy.org/doc/)** - Master the fundamental operations
+- **[Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)** — Michael Nielsen (free online book)
+- **[CS231n Course Notes](http://cs231n.github.io/)** — Stanford's deep learning course
+- **[The Matrix Calculus You Need For Deep Learning](https://arxiv.org/abs/1802.01528)** — Essential reference for gradient calculations
+- **[NumPy Documentation](https://numpy.org/doc/)** — Master the fundamental operations
 
 ### **Study Path Recommendations:**
 
@@ -474,19 +466,22 @@ Join our community for:
 ## 🎯 Ready to Begin?
 
 ### **Starting from scratch?**
-→ Begin with [`nn.ipynb`](nn.ipynb) - implement your first neuron and build up
+→ Begin with [`nn.ipynb`](nn.ipynb) — implement your first neuron and build up
 
 ### **Ready for advanced techniques?**
-→ Continue with [`nn2.ipynb`](nn2.ipynb) - add optimizers and regularization
+→ Continue with [`nn2.ipynb`](nn2.ipynb) — add optimizers and regularization
 
 ### **Want to design a library?**
-→ Study [`nn3.ipynb`](nn3.ipynb) - learn modular architecture patterns
+→ Study [`nn3.ipynb`](nn3.ipynb) — learn modular architecture patterns
 
 ### **Need to see a complete system?**
-→ Explore [`DeepPip/`](DeepPip/) - end-to-end pipeline example
+→ Explore [`DeepPip/`](DeepPip/) — end-to-end pipeline example
 
 ### **Looking for production patterns?**
-→ Examine [`deep-learning-pipeline-lecture3/`](deep-learning-pipeline-lecture3/) - advanced system with CLI tools
+→ Examine [`deep-learning-pipeline-lecture3/`](deep-learning-pipeline-lecture3/) — advanced system with CLI tools
+
+### **Planning your capstone?**
+→ Study [`nn_capstone_example/`](nn_capstone_example/) — reference structure
 
 ### **Ready to build your capstone?**
 → Start designing your library, then build a pipeline around it
@@ -496,27 +491,60 @@ Join our community for:
 
 ---
 
-## 🗂️ **Module Structure:**
+## 🗂️ Module Structure
+
 ```
 3_Neural Network from scratch/
 │
-├── 📚 README.md                          # This guide
-├── 🧮 nn.ipynb                           # From Neurons to MLP + Gradient Descent
-├── ⚙️ nn2.ipynb                          # Advanced Optimization & Regularization
-├── 📚 nn3.ipynb                          # Deep Learning Library from Scratch
-├── 🚀 DeepPip/                           # Complete End-to-End Pipeline
-│   ├── run_pipeline.py                   # Training pipeline
-│   ├── launch_ui.py                      # Interactive UI
-│   ├── src/                              # Neural network implementation
-│   ├── models/                           # Saved models
-│   └── results/                          # Training outputs
-├── 🏗️ deep-learning-pipeline-lecture3/   # Advanced Production Pipeline
-│   ├── scripts/                          # CLI tools and entry points
-│   ├── src/                              # Modular source code
-│   ├── config/                           # Configuration management
-│   ├── notebooks/                        # Educational notebooks
-│   └── assets/                           # Documentation assets
-└── 🎯 YOUR_IMPLEMENTATION/               # Your library and pipeline go here!
+├── 📚 README.md                              # This guide
+├── 🧮 nn.ipynb                               # From Neurons to MLP + Gradient Descent
+├── ⚙️ nn2.ipynb                              # Advanced Optimization & Regularization
+├── 📚 nn3.ipynb                              # Deep Learning Library from Scratch
+│
+├── 🚀 DeepPip/                               # Complete End-to-End Pipeline
+│   ├── config/
+│   ├── data/                                 # Datasets (MNIST, Fashion, CIFAR-10)
+│   ├── src/                                  # Neural network implementation
+│   ├── models/                               # Saved model weights
+│   ├── results/                              # Training outputs & visualizations
+│   ├── logs/                                 # Pipeline execution logs
+│   ├── run_pipeline.py                       # Training entry point
+│   ├── gradio_app.py                         # Interactive UI
+│   ├── sample.py
+│   └── setup.sh
+│
+├── 🏗️ deep-learning-pipeline-lecture3/       # Advanced Production Pipeline
+│   ├── config/
+│   │   ├── config.yaml                       # Main configuration
+│   │   └── experiments/                      # Experiment configs
+│   ├── dl_pipeline_lecture3/                 # Source package
+│   │   ├── data/                             # Data loading & preprocessing
+│   │   ├── models/                           # Layer implementations
+│   │   ├── training/                         # Training loops & visualization
+│   │   ├── evaluation/                       # Metrics & analysis
+│   │   ├── inference/                        # UI for inference
+│   │   └── utils/                            # Config loader & logger
+│   ├── scripts/                              # CLI tools
+│   │   ├── run_pipeline.py
+│   │   ├── train_model.py
+│   │   ├── download_data.py
+│   │   └── cli_tools.py
+│   ├── notebooks/                            # Educational notebooks
+│   ├── tests/                                # Unit tests
+│   ├── install_cli.sh
+│   └── install_cli_simple.sh
+│
+├── 📎 nn_capstone_example/                   # Capstone Reference Structure
+│   ├── configs/
+│   ├── examples/
+│   ├── src/
+│   │   ├── nnlib/                            # Reference library
+│   │   ├── pipline/                          # Reference pipeline
+│   │   ├── cli/
+│   │   └── utils/
+│   └── ui/
+│
+└── 🎯 YOUR_IMPLEMENTATION/                   # Your library and pipeline go here!
 ```
 
 ---
@@ -543,7 +571,7 @@ Join our community for:
 
 ---
 
-> **"السير" - "Walking on a road"**  
+> **"السير" — "Walking on a road"**  
 > *True mastery in deep learning comes from understanding the path from mathematical operations to complete systems. Each step you build from scratch deepens your intuition and skills.*
 
 **Build your understanding neuron by neuron, layer by layer, pipeline by pipeline! 🧠**
@@ -566,4 +594,5 @@ Join our community for:
 
 **Begin your journey into the foundations of deep learning! The understanding you gain here will inform all your future work with neural networks. 🚀**
 
-*"In theory, theory and practice are the same. In practice, they are not." - Build both here.*
+*"In theory, theory and practice are the same. In practice, they are not." — Build both here.*
+````

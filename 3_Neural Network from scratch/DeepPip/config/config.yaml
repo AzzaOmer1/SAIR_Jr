@@ -1,0 +1,66 @@
+# DNN Training Pipeline Configuration
+
+# Directories
+data_dir: ./data
+models_dir: ./models
+results_dir: ./results
+logs_dir: ./logs
+
+# Datasets
+datasets:
+  mnist:
+    urls:
+      train_images: https://storage.googleapis.com/cvdf-datasets/mnist/train-images-idx3-ubyte.gz
+      train_labels: https://storage.googleapis.com/cvdf-datasets/mnist/train-labels-idx1-ubyte.gz
+      test_images: https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz
+      test_labels: https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz
+    classes: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  
+  fashion:
+    urls:
+      train_images: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz
+      train_labels: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz
+      test_images: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz
+      test_labels: http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz
+    classes: ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+  
+  cifar10:
+    urls:
+      archive: https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+    classes: ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+
+# Architectures
+architectures:
+  simple_dnn:
+    layers: [null, 64, 10]  # null = input_size
+    activations: ['relu', 'softmax']
+    learning_rate: 0.001
+    l2_lambda: 0.0001
+    epochs: 20
+    batch_size: 64
+  
+  medium_dnn:
+    layers: [null, 128, 64, 10]
+    activations: ['relu', 'relu', 'softmax']
+    learning_rate: 0.0005
+    l2_lambda: 0.0005
+    epochs: 25
+    batch_size: 64
+  
+  deep_dnn:
+    layers: [null, 256, 128, 64, 10]
+    activations: ['relu', 'relu', 'relu', 'softmax']
+    learning_rate: 0.0003
+    l2_lambda: 0.001
+    epochs: 30
+    batch_size: 64 
+
+# Training
+training:
+  val_split: 0.1
+  random_seed: 42
+
+# Logging
+logging:
+  level: INFO
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

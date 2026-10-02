@@ -1,12 +1,15 @@
-# Module 2: Classification & Production Pipelines  🎯
+
+# 🎯 Module 2: Classification & Production Pipelines
 
 **From Notebooks to Professional ML Systems**
+
+> 📌 **Part of the [SAIR Jr. ML Engineering Track](../README.md)** — bottom-up, depth-first. We build the foundation that lasts years, not the framework of the month.
 
 **📍 Location:** `2_Classification/`  
 **🎯 Prerequisite:** [Module 1: Regression Mastery](../1_Regression/README.md)  
 **➡️ Next Module:** [Module 3: Neural Networks from Scratch](../3_Neural%20Network%20from%20scratch/README.md)
 
-Welcome to the **Classification Module** of **SAIR** – where you transition from experimental notebooks to **production-ready ML systems** with professional pipelines and deployment architecture.
+Welcome to the **Classification Module** of **SAIR** — where you transition from experimental notebooks to **production-ready ML systems** with professional pipelines and deployment architecture. This is where "notebook code" becomes "system code."
 
 ---
 
@@ -47,6 +50,8 @@ These **production tools** transform your ML code from experiments to enterprise
 | **`Lecture_4.ipynb`** | Classification from Scratch | 4-5 hours | **Essential** |
 | **`Lecture_5.ipynb`** | Production Pipeline System | 5-6 hours | **Professional** |
 | **`Pipeline/` System** | Modular Architecture | 6-8 hours | **Industry Ready** |
+
+---
 
 ## 🗺️ Your Learning Journey
 
@@ -98,24 +103,24 @@ At SAIR, we believe **modular, maintainable code separates hobby projects from p
 
 ## 🚀 Quick Start Guide
 
-### **For Sequential Learners:**
+### **For Sequential Learners (Recommended):**
 ```bash
 # 1. Start with classification fundamentals
-jupyter notebook Lecture_4.ipynb
+uv run jupyter notebook Lecture_4.ipynb
 
 # 2. Learn pipeline transformation
-jupyter notebook Lecture_5.ipynb
+uv run jupyter notebook Lecture_5.ipynb
 
 # 3. Explore the production pipeline
 cd Pipeline
-python run_pipeline.py
+uv run python run_pipeline.py
 ```
 
 ### **For Pipeline-Focused Learners:**
 ```bash
 # Dive directly into professional architecture
 cd Pipeline
-python run_pipeline.py
+uv run python run_pipeline.py
 
 # Run the Streamlit app
 uv run streamlit run streamlit_app/app.py
@@ -124,8 +129,10 @@ uv run streamlit run streamlit_app/app.py
 ### **Run the Complete Example:**
 ```bash
 # Test the breast cancer pipeline
-python breast_cancer_pipline.py
+uv run python breast_cancer_pipline.py
 ```
+
+> 💡 **First time here?** Run `uv sync` from the SAIR root first to install dependencies.
 
 ---
 
@@ -136,34 +143,35 @@ python breast_cancer_pipline.py
 The `Pipeline/` directory contains a **complete, production-ready ML system** that transforms Lecture 5 concepts into a professional codebase.
 
 #### **Key Features:**
-- ✅ **Modular Architecture** - Separate data, models, config, utils
-- ✅ **Advanced Feature Engineering** - Custom transformers for domain-specific features
-- ✅ **Multi-Model Training** - 7+ algorithms with systematic comparison
-- ✅ **Hyperparameter Tuning** - Cross-validation and optimization
-- ✅ **MLflow Experiment Tracking** - Reproducible experiments
-- ✅ **Streamlit Deployment** - Interactive web application
+- ✅ **Modular Architecture** — separate data, models, config, utils
+- ✅ **Advanced Feature Engineering** — custom transformers for domain-specific features
+- ✅ **Multi-Model Training** — 7+ algorithms with systematic comparison
+- ✅ **Hyperparameter Tuning** — cross-validation and optimization
+- ✅ **MLflow Experiment Tracking** — reproducible experiments
+- ✅ **Streamlit Deployment** — interactive web application
 
 #### **Pipeline Structure:**
 ```
 Pipeline/
-├── config/              # Configuration Management
-│   ├── config.py        # Centralized settings and paths
+├── config/                       # Configuration Management
+│   ├── config.py                 # Centralized settings and paths
 │   └── __init__.py
-├── data/                # Data Processing
-│   ├── load_data.py     # Data ingestion and splitting
-│   ├── preprocessing.py # Cleaning & preparation pipelines
-│   ├── feature_engineering.py # Custom feature creation
-│   └── raw/            # Source datasets
-├── models/              # ML Modeling
-│   ├── base_model.py    # Abstract base classes
-│   ├── train_model.py   # Training orchestration
-│   ├── evaluate_model.py # Comprehensive evaluation
-│   └── hyperparameter_tuning.py # Systematic optimization
-├── utils/               # Shared Utilities
-│   └── mlflow_utils.py  # Experiment tracking helpers
-├── streamlit_app/       # Deployment
-│   └── app.py          # Web interface for predictions
-└── run_pipeline.py      # Main execution script
+├── data/                         # Data Processing
+│   ├── processed/                # Cleaned & prepared data
+│   └── raw/                      # Source datasets
+│       ├── train.csv
+│       └── test.csv
+├── models/                       # ML Modeling
+│   ├── base_model.py             # Abstract base classes
+│   ├── train_model.py            # Training orchestration
+│   ├── evaluate_model.py         # Comprehensive evaluation
+│   └── hyperparameter_tuning.py  # Systematic optimization
+├── utils/                        # Shared Utilities
+│   └── mlflow_utils.py           # Experiment tracking helpers
+├── streamlit_app/                # Deployment
+│   └── app.py                    # Web interface for predictions
+├── run_pipeline.py               # Main execution script
+└── setup.py                      # Package configuration
 ```
 
 ### **Run the Complete Pipeline:**
@@ -171,12 +179,12 @@ Pipeline/
 cd Pipeline
 
 # Execute full pipeline
-python run_pipeline.py --mode full
+uv run python run_pipeline.py --mode full
 
 # Or run specific steps
-python run_pipeline.py --mode preprocessing    # Data only
-python run_pipeline.py --mode training        # Models only  
-python run_pipeline.py --mode evaluation      # Evaluation only
+uv run python run_pipeline.py --mode preprocessing    # Data only
+uv run python run_pipeline.py --mode training         # Models only
+uv run python run_pipeline.py --mode evaluation       # Evaluation only
 ```
 
 ### **View MLflow Experiments:**
@@ -187,7 +195,7 @@ mlflow ui --backend-store-uri mlruns
 
 ---
 
-## 🎯 Capstone Project: Build Your Pipeline
+## 🏆 Capstone Project: Build Your Pipeline
 
 ### **Your Mission:**
 Apply the pipeline architecture to a **classification problem of your choice**, inspired by the Spaceship Titanic example.
@@ -201,50 +209,19 @@ Apply the pipeline architecture to a **classification problem of your choice**, 
 - ✅ Professional documentation
 
 ### **Project Ideas (Inspired by Spaceship Titanic):**
-- 🏥 **Medical Diagnosis** - Patient outcome prediction
-- 💳 **Fraud Detection** - Transaction classification  
-- 📧 **Spam Filter** - Email categorization system
-- 🛒 **Customer Churn** - Retention prediction
-- 🎯 **Sentiment Analysis** - Review classification
-- 🚀 **Custom Dataset** - Your own classification problem!
+- 🏥 **Medical Diagnosis** — Patient outcome prediction
+- 💳 **Fraud Detection** — Transaction classification
+- 📧 **Spam Filter** — Email categorization system
+- 🛒 **Customer Churn** — Retention prediction
+- 🎯 **Sentiment Analysis** — Review classification
+- 🚀 **Custom Dataset** — Your own classification problem!
 
 ### **Follow the Pattern:**
 Study the `Pipeline/` structure and adapt it for your project:
-- Replace dataset loading in `data/load_data.py`
-- Customize feature engineering in `data/feature_engineering.py`
+- Replace dataset loading in `data/`
+- Customize feature engineering in `data/`
 - Modify model portfolio in `models/base_model.py`
 - Update the Streamlit app for your domain
-
----
-
-## 🌟 Student Inspiration: Spaceship Titanic Pipeline
-
-The included `Pipeline/` demonstrates **exactly what you'll build**:
-
-### **What Makes It Professional:**
-- **Configuration Management**: Centralized settings in `config.py`
-- **Feature Engineering**: Custom `SpaceshipFeatureEngineer` class
-- **Model Portfolio**: 7+ algorithms with hyperparameter tuning
-- **Experiment Tracking**: MLflow for reproducibility
-- **Modular Design**: Each component independently testable
-
-### **Key Learning Outcomes:**
-After studying this pipeline, you'll be able to:
-✅ Build modular ML pipelines from scratch  
-✅ Implement domain-specific feature engineering  
-✅ Compare multiple models systematically  
-✅ Track experiments with MLflow  
-✅ Create reproducible research  
-✅ Structure projects for collaboration  
-
-### **Adaptation Guide:**
-```python
-# In your project, replace Spaceship Titanic specifics:
-# data/load_data.py → Your dataset loading
-# data/feature_engineering.py → Your domain features  
-# models/base_model.py → Your model portfolio
-# streamlit_app/app.py → Your application interface
-```
 
 ---
 
@@ -259,7 +236,7 @@ mlflow ui --backend-store-uri Pipeline/mlruns
 ```
 
 | Metric | What It Means | Good Range |
-|--------|--------------|------------|
+|--------|---------------|------------|
 | `val_accuracy` | Accuracy on held-out validation set | >85% for most problems |
 | `val_f1` | Harmonic mean of precision and recall | >0.80 for balanced classes |
 | `val_roc_auc` | Area under the ROC curve | >0.85 is strong |
@@ -275,15 +252,16 @@ mlflow ui --backend-store-uri Pipeline/mlruns
 |---------|-------------|-----|
 | `mlflow.exceptions.MlflowException` | Tracking dir not found | Run pipeline from the `Pipeline/` directory |
 | Streamlit app shows stale predictions | Old model pickle loaded | Delete `models/` and re-run `--mode full` |
-| `KeyError` in feature engineering | Column renamed in your dataset | Update column names in `config.py` |
+| `KeyError` in feature engineering | Column renamed in your dataset | Update column names in `config/config.py` |
 | Hyperparameter tuning takes too long | Too many combinations | Reduce `param_grid` in `models/base_model.py` |
 | `Class imbalance` warning | Unequal class distribution | Add `class_weight='balanced'` to your estimator |
+| `ModuleNotFoundError: config` | Running from wrong directory | Run all commands from inside `Pipeline/` |
 
 ---
 
 ## 🤝 Get Help & Connect
 
-Building pipelines can be challenging - we're here to help!
+Building pipelines can be challenging — we're here to help!
 
 [![Telegram](https://img.shields.io/badge/Telegram-Join_SAIR_Community-blue?logo=telegram)](https://t.me/+jPPlO6ZFDbtlYzU0)
 
@@ -317,11 +295,14 @@ Get architecture reviews, pipeline feedback, and join deep-dive sessions on ML e
 | [`Pipeline/run_pipeline.py`](Pipeline/run_pipeline.py) | Complete pipeline example | Learning architecture |
 | [`Pipeline/streamlit_app/app.py`](Pipeline/streamlit_app/app.py) | Production deployment | Building your UI |
 | [`Pipeline/config/config.py`](Pipeline/config/config.py) | Configuration template | Project setup |
+| [`Pipeline/models/base_model.py`](Pipeline/models/base_model.py) | Model abstraction pattern | Extending model portfolio |
+| [`Pipeline/utils/mlflow_utils.py`](Pipeline/utils/mlflow_utils.py) | MLflow helpers | Experiment tracking |
 | [`breast_cancer_pipline.py`](breast_cancer_pipline.py) | Integrated example | Testing end-to-end flow |
+| [`Pipeline/README.md`](Pipeline/README.md) | Deep-dive documentation | Understanding the full system |
 
 ---
 
-> **"السير" - "Walking on a road"**  
+> **"السير" — "Walking on a road"**  
 > *Professional ML is about systems, not just models. This pipeline example shows you the path from notebooks to production.*
 
 **Study the pattern, then build your masterpiece! 🏗️**
@@ -332,21 +313,38 @@ Get architecture reviews, pipeline feedback, and join deep-dive sessions on ML e
 
 ---
 
-## 🗂️ **Module Structure:**
+## 🗂️ Module Structure
+
 ```
-3_Classification/
+2_Classification/
 │
 ├── 📚 README.md                          # This guide
 ├── 🎯 Lecture_4.ipynb                    # Classification from Scratch
 ├── 🚀 Lecture_5.ipynb                    # Production Pipeline Design
 ├── 🔧 breast_cancer_pipline.py           # Integrated Example
-└── 🏗️ Pipeline/                         # Professional Architecture
+└── 🏗️ Pipeline/                          # Professional Architecture
     ├── config/                           # Configuration Management
+    │   ├── config.py                     # Centralized settings and paths
+    │   └── __init__.py
     ├── data/                             # Data Processing
+    │   ├── processed/                    # Cleaned & prepared data
+    │   └── raw/                          # Source datasets
+    │       ├── train.csv
+    │       └── test.csv
     ├── models/                           # ML Modeling
+    │   ├── base_model.py                 # Abstract base classes
+    │   ├── train_model.py                # Training orchestration
+    │   ├── evaluate_model.py             # Comprehensive evaluation
+    │   ├── hyperparameter_tuning.py      # Systematic optimization
+    │   └── __init__.py
     ├── utils/                            # Shared Utilities
+    │   ├── mlflow_utils.py               # Experiment tracking helpers
+    │   └── __init__.py
     ├── streamlit_app/                    # Deployment Interface
-    ├── run_pipeline.py                   # Main Execution
-    ├── README.md                         # Detailed Documentation
-    └── requirements.txt                  # Dependencies
+    │   ├── app.py                        # Web UI for predictions
+    │   └── __init__.py
+    ├── run_pipeline.py                   # Main Execution Script
+    ├── setup.py                          # Package Configuration
+    ├── __init__.py
+    └── README.md                         # Detailed Pipeline Docs
 ```
