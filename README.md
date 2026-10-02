@@ -1129,4 +1129,3 @@ With NeetCode 75 completion and SAIR Jr. training, graduates demonstrate:
 **The world needs Sudanese AI talent. The time for preparation is now. Begin your journey today.**
 
 </div>
-````
