@@ -1020,20 +1020,6 @@ Python foundations guide
 
 </div>
 
-### 📝 **Getting Started with NeetCode 75**
-
-**Set Up Your Progress Tracker:**
-   ```python
-   # Example progress tracking structure
-   problems/
-   ├── arrays_hashing/
-   │   ├── 01_two_sum.py
-   │   ├── 02_contains_duplicate.py
-   │   └── README.md  # Pattern notes
-   ├── two_pointers/
-   └── progress.json  # Auto-generated tracking
-   ```
-
 3. **Weekly Commitment Plan:**
    - **Monday:** Learn pattern theory (30 min)
    - **Tuesday-Thursday:** Solve 2 problems/day (1-2 hours)
