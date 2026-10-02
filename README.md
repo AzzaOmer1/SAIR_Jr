@@ -51,7 +51,6 @@
 | 4 — Applied Deep Learning with PyTorch | `4_Applied Deep Learning with PyTorch/` | [README](4_Applied%20Deep%20Learning%20with%20PyTorch/README.md) | ✅ Complete |
 | 5 — GPT from Scratch | `5_GPT from scratch/` | [README](5_GPT%20from%20scratch/README.md) · [🏆 Capstone](https://github.com/SAIR-Org/miniGPT) | ✅ Complete |
 | 6 — MLOps | [SAiR-MLOps](https://github.com/SAIR-Org/SAiR-MLOps) | [README](https://github.com/SAIR-Org/SAiR-MLOps) | ✅ Complete |
-| 🎓 Student Contributors | [Jump to section](#-student-contributors-the-builders) | — | 🌱 Growing |
 
 ---
 
@@ -864,265 +863,20 @@ To verify completion, you must:
 
 ---
 
-## 🎓 **Student Contributors: The Builders**
+## 🎓 **Contributors**
+
+Thanks to everyone who has contributed to building Sudan's AI future 🇸🇩 — from exercises and projects to documentation and mentoring.
 
 <div align="center">
 
-### **These Learners Chose the Hard Path**
+<a href="https://github.com/SAIR-Org/SAIR_Jr/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=SAIR-Org/SAIR_Jr&max=200" alt="Contributors" />
+</a>
 
-<table>
-<tr>
-<td width="100%" align="center">
-<h3>"السهل لا يصنع القادة، والصعب يبني العقول"</h3>
-<p><em>Easy doesn't create leaders, difficult builds minds</em></p>
-<p>Every name below represents a student who <strong>built something real</strong> — from first principles, to spec, with production standards.</p>
-</td>
-</tr>
-</table>
+<br/>
+<br/>
 
-</div>
-
-### 💎 **Capstone Builders**
-*Students who shipped a full end-to-end AI system:*
-
-<table>
-<tr>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME1">
-<img src="https://github.com/USERNAME1.png" width="90px;" alt="Student Name 1"/><br/>
-<sub><b>Student Name 1</b></sub>
-</a><br/>
-<sub>🌾 Crop Disease Detector</sub><br/>
-<sub><em>Capstone</em></sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME2">
-<img src="https://github.com/USERNAME2.png" width="90px;" alt="Student Name 2"/><br/>
-<sub><b>Student Name 2</b></sub>
-</a><br/>
-<sub>🔤 Arabic NLP Chatbot</sub><br/>
-<sub><em>Capstone</em></sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME3">
-<img src="https://github.com/USERNAME3.png" width="90px;" alt="Student Name 3"/><br/>
-<sub><b>Student Name 3</b></sub>
-</a><br/>
-<sub>🏥 Health Diagnostic Aid</sub><br/>
-<sub><em>Capstone</em></sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME4">
-<img src="https://github.com/USERNAME4.png" width="90px;" alt="Student Name 4"/><br/>
-<sub><b>Student Name 4</b></sub>
-</a><br/>
-<sub>📚 Arabic EdTech Tool</sub><br/>
-<sub><em>Capstone</em></sub>
-</td>
-</tr>
-</table>
-
-### 🧠 **Module 5 — GPT from Scratch**
-*Students who built a full GPT-2 (124M) from a blank file:*
-
-<table>
-<tr>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME5">
-<img src="https://github.com/USERNAME5.png" width="90px;" alt="Student Name 5"/><br/>
-<sub><b>Student Name 5</b></sub>
-</a><br/>
-<sub>miniGPT — Arabic Fine-tune</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME6">
-<img src="https://github.com/USERNAME6.png" width="90px;" alt="Student Name 6"/><br/>
-<sub><b>Student Name 6</b></sub>
-</a><br/>
-<sub>miniGPT — Poetry Generator</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME7">
-<img src="https://github.com/USERNAME7.png" width="90px;" alt="Student Name 7"/><br/>
-<sub><b>Student Name 7</b></sub>
-</a><br/>
-<sub>miniGPT — Instruction SFT</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME8">
-<img src="https://github.com/USERNAME8.png" width="90px;" alt="Student Name 8"/><br/>
-<sub><b>Student Name 8</b></sub>
-</a><br/>
-<sub>miniGPT — Text Classifier</sub>
-</td>
-</tr>
-</table>
-
-### 🔥 **Module 4 — Applied Deep Learning**
-*Students who shipped vision / NLP / transformer pipelines:*
-
-<table>
-<tr>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME9">
-<img src="https://github.com/USERNAME9.png" width="90px;" alt="Student Name 9"/><br/>
-<sub><b>Student Name 9</b></sub>
-</a><br/>
-<sub>CNN Image Classifier</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME10">
-<img src="https://github.com/USERNAME10.png" width="90px;" alt="Student Name 10"/><br/>
-<sub><b>Student Name 10</b></sub>
-</a><br/>
-<sub>Fine-tuned BERT — Arabic Sentiment</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME11">
-<img src="https://github.com/USERNAME11.png" width="90px;" alt="Student Name 11"/><br/>
-<sub><b>Student Name 11</b></sub>
-</a><br/>
-<sub>HuggingFace NLP Pipeline</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME12">
-<img src="https://github.com/USERNAME12.png" width="90px;" alt="Student Name 12"/><br/>
-<sub><b>Student Name 12</b></sub>
-</a><br/>
-<sub>Vision Transformer Demo</sub>
-</td>
-</tr>
-</table>
-
-### ⚙️ **Module 6 — MLOps**
-*Students who containerized, versioned, and deployed a production ML system:*
-
-<table>
-<tr>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME13">
-<img src="https://github.com/USERNAME13.png" width="90px;" alt="Student Name 13"/><br/>
-<sub><b>Student Name 13</b></sub>
-</a><br/>
-<sub>Docker + FastAPI + MLflow</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME14">
-<img src="https://github.com/USERNAME14.png" width="90px;" alt="Student Name 14"/><br/>
-<sub><b>Student Name 14</b></sub>
-</a><br/>
-<sub>CI/CD with GitHub Actions</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME15">
-<img src="https://github.com/USERNAME15.png" width="90px;" alt="Student Name 15"/><br/>
-<sub><b>Student Name 15</b></sub>
-</a><br/>
-<sub>Data Pipeline + DVC</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME16">
-<img src="https://github.com/USERNAME16.png" width="90px;" alt="Student Name 16"/><br/>
-<sub><b>Student Name 16</b></sub>
-</a><br/>
-<sub>Monitoring + Prometheus</sub>
-</td>
-</tr>
-</table>
-
-### 🧠 **Module 3 — Neural Networks from Scratch**
-*Students who built their own neural network library:*
-
-<table>
-<tr>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME17">
-<img src="https://github.com/USERNAME17.png" width="90px;" alt="Student Name 17"/><br/>
-<sub><b>Student Name 17</b></sub>
-</a><br/>
-<sub>Custom NN Library</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME18">
-<img src="https://github.com/USERNAME18.png" width="90px;" alt="Student Name 18"/><br/>
-<sub><b>Student Name 18</b></sub>
-</a><br/>
-<sub>Backprop from Scratch</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME19">
-<img src="https://github.com/USERNAME19.png" width="90px;" alt="Student Name 19"/><br/>
-<sub><b>Student Name 19</b></sub>
-</a><br/>
-<sub>Optimizer Playground</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME20">
-<img src="https://github.com/USERNAME20.png" width="90px;" alt="Student Name 20"/><br/>
-<sub><b>Student Name 20</b></sub>
-</a><br/>
-<sub>Math Derivations</sub>
-</td>
-</tr>
-</table>
-
-### 🎯 **Modules 0–2 — Foundations**
-*Students who mastered Python, regression, and classification pipelines:*
-
-<table>
-<tr>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME21">
-<img src="https://github.com/USERNAME21.png" width="90px;" alt="Student Name 21"/><br/>
-<sub><b>Student Name 21</b></sub>
-</a><br/>
-<sub>Regression API</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME22">
-<img src="https://github.com/USERNAME22.png" width="90px;" alt="Student Name 22"/><br/>
-<sub><b>Student Name 22</b></sub>
-</a><br/>
-<sub>Classification Pipeline</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME23">
-<img src="https://github.com/USERNAME23.png" width="90px;" alt="Student Name 23"/><br/>
-<sub><b>Student Name 23</b></sub>
-</a><br/>
-<sub>Data Analysis Script</sub>
-</td>
-<td align="center" width="150px">
-<a href="https://github.com/USERNAME24">
-<img src="https://github.com/USERNAME24.png" width="90px;" alt="Student Name 24"/><br/>
-<sub><b>Student Name 24</b></sub>
-</a><br/>
-<sub>First ML Model</sub>
-</td>
-</tr>
-</table>
-
-### 🚀 **Want Your Name Here?**
-
-<div align="center">
-
-<table>
-<tr>
-<td width="100%" align="center">
-
-**Complete any module exercise or project → submit a PR → get featured.**
-
-Steps:
-1. 📝 Complete a module exercise or capstone project
-2. 🔀 Submit it via Pull Request to the relevant module folder
-3. ✅ Get it merged → your name joins the Wall of Builders
-4. 🏆 Ship a capstone → get featured in the top table
-
-**Questions?** Ask in [`#contributions`](https://t.me/+jPPlO6ZFDbtlYzU0) on Telegram.
-
-</td>
-</tr>
-</table>
+**Want your name here?** Complete any module exercise or capstone project and submit a PR.
 
 </div>
 
@@ -1375,4 +1129,4 @@ With NeetCode 75 completion and SAIR Jr. training, graduates demonstrate:
 **The world needs Sudanese AI talent. The time for preparation is now. Begin your journey today.**
 
 </div>
-```
+````
