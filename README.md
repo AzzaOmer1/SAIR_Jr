@@ -219,37 +219,39 @@
 
 ---
 
-## ✅ **Module 5 Complete: GPT from Scratch**
+## ✅ **Completed Modules: 5 & 6**
 
 <div align="center">
 
-### **✅ Module 5 Complete: GPT from Scratch**
-
-**What we built:** A full GPT-2 language model from a blank file using only PyTorch  
-**Textbook:** *Build a Large Language Model (From Scratch)* — Sebastian Raschka  
-**Capstone:** [miniGPT](https://github.com/SAIR-Org/miniGPT) — full-stack CLI + Modal cloud training + web UI
+### **Two Full Modules Shipped — From LLMs to Production**
 
 <table>
 <tr>
-<td width="60%" align="center">
-<h4>📊 Module Progress</h4>
-<div style="background: #f5f5f5; padding: 10px; border-radius: 8px;">
-<div style="background: linear-gradient(90deg, #4caf50 100%, #e0e0e0 0%); height: 20px; border-radius: 10px;"></div>
-<p style="margin-top: 8px;"><strong>All 5 Notebooks + 3 Appendixes Complete</strong></p>
-</div>
+<td width="50%" align="center">
+<h3>🧠 Module 5 — GPT from Scratch</h3>
+<p><strong>Built:</strong> Full GPT-2 (124M params) from a blank file using only PyTorch</p>
+<p><strong>Textbook:</strong> <em>Build a Large Language Model (From Scratch)</em> — Sebastian Raschka</p>
+<p><strong>Capstone:</strong> <a href="https://github.com/SAIR-Org/miniGPT">🏆 miniGPT</a> — full-stack CLI + Modal cloud training + web UI</p>
+<p>
+<img src="https://img.shields.io/badge/✅_COMPLETE-4CAF50?style=flat-square" alt="Complete"/>
+</p>
 </td>
-<td width="40%" align="center">
-<h4>🧠 What We Built</h4>
-<p>🔤 Custom tokenizer + data pipeline<br/>
-👁️ Multi-head causal attention<br/>
-🏗️ Full GPT-2 architecture (124M params)<br/>
-⚡ Training loop V0→V4 (DDP)<br/>
-🎲 4 generation strategies + Gradio UI</p>
+<td width="50%" align="center">
+<h3>⚙️ Module 6 — MLOps</h3>
+<p><strong>Built:</strong> Production ML system — containerized, versioned, monitored, deployed</p>
+<p><strong>Hands-On:</strong> <a href="https://github.com/SAIR-Org/SAiR-MLOps">SAIRCAMP Project 1 — NYC Taxi MLOps</a> (9 modules, notebook → production)</p>
+<p><strong>Theory:</strong> <em>MLOps from First Principles</em> — YouTube playlist</p>
+<p><strong>Reading:</strong> <em>Designing Machine Learning Systems</em> — Chip Huyen</p>
+<p>
+<img src="https://img.shields.io/badge/✅_COMPLETE-9C27B0?style=flat-square" alt="Complete"/>
+</p>
 </td>
 </tr>
 </table>
 
 </div>
+
+---
 
 ### 📖 **Module 5 Learning Journey: Build a GPT Language Model**
 
@@ -315,6 +317,69 @@
 </tr>
 </tbody>
 </table>
+
+---
+
+### 📖 **Module 6 Learning Journey: From Notebook to Production**
+
+**Theory track + hands-on project — the full arc from a Jupyter notebook to a secured, auto-deploying production system**
+
+<table>
+<thead>
+<tr>
+<th width="25%">Resource</th>
+<th width="20%">Type</th>
+<th width="55%">What It Covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MLOps from First Principles</strong></td>
+<td>📖 Theory (YouTube)</td>
+<td>Concept-first playlist — the <em>why</em> behind every MLOps tool. Watch before each SAIRCAMP build session.</td>
+</tr>
+<tr style="background-color: #f3e5f5; border-left: 3px solid #9c27b0;">
+<td><strong>SAIRCAMP Project 1 — NYC Taxi MLOps</strong></td>
+<td>🏗️ Hands-On (9 modules)</td>
+<td>End-to-end production system: notebook → tracked experiments → orchestrated pipeline → online + batch serving → Docker Compose → real VPS → Nginx + HTTPS + CI/CD → Prometheus + Grafana monitoring. Dataset: NYC Yellow Taxi (2019–2024).</td>
+</tr>
+<tr>
+<td><strong>Designing Machine Learning Systems</strong></td>
+<td>📚 Required Reading</td>
+<td>Chip Huyen — design reasoning above the code: data distribution shifts, train/serve skew, feature stores, monitoring strategy, org-level tradeoffs.</td>
+</tr>
+<tr style="background-color: #e8f5e9; border-left: 3px solid #4caf50;">
+<td><strong>SAIRCAMP Project 2 — Deep Learning MLOps</strong></td>
+<td>🏗️ Hands-On</td>
+<td>🔜 <strong>Coming</strong> — the next project in the SAIRCAMP series. Same MLOps principles, applied to a deep learning system.</td>
+</tr>
+</tbody>
+</table>
+
+---
+
+### 🎯 **What "Production-Ready" Actually Means Here**
+
+<div align="center">
+
+<table>
+<tr>
+<td width="33%" align="center">
+<h3>🔁 Reproducible</h3>
+<p>Anyone can clone the repo, run one command, and get the same results — data, model, and environment all versioned</p>
+</td>
+<td width="33%" align="center">
+<h3>📦 Portable</h3>
+<p>The system runs identically on a laptop, a CI runner, and a cloud server thanks to Docker + config management</p>
+</td>
+<td width="34%" align="center">
+<h3>📊 Observable</h3>
+<p>Every prediction, latency spike, and drift signal is tracked — you know when the model starts failing <em>before</em> users do</p>
+</td>
+</tr>
+</table>
+
+</div>
 
 ---
 
