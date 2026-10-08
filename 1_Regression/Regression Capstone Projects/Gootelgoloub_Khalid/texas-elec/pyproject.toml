@@ -1,0 +1,23 @@
+[project]
+name = "texas-elec"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.1",
+    "mlflow>=3.17.0",
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "scikit-learn>=1.9.0",
+    "seaborn>=0.13.2",
+    "streamlit>=1.65.0",
+]
+
+[project.scripts]
+texas-elec = "texas_elec:main"
+
+[build-system]
+requires = ["uv_build>=0.12.9,<0.13.0"]
+build-backend = "uv_build"
