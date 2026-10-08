@@ -1,0 +1,52 @@
+{
+  "model_name": "Linear Regression",
+  "created_at": "2026-10-07T21:15:34",
+  "dataset": "Texas monthly electricity consumption",
+  "target": "consumption",
+  "target_unit": "million kilowatt-hours (as described by source data)",
+  "prediction_scope": "Estimate monthly consumption when that month's observed average temperature is available",
+  "features": [
+    "avg_temp_f",
+    "avg_temp_f_sq",
+    "year",
+    "month"
+  ],
+  "feature_engineering": "PolynomialFeatures(degree=2) for avg_temp_f; year and month passed through",
+  "selection": {
+    "selected_using": "chronological validation set",
+    "reason": "Linear Regression had the lowest validation RMSE among compared models",
+    "validation_r2": 0.7575597806485662,
+    "validation_mae": 1841.7406907122597,
+    "validation_rmse": 2413.842930693772
+  },
+  "final_test_metrics": {
+    "test_r2": 0.41680916774001864,
+    "test_mae": 3707.6046076674925,
+    "test_rmse": 4250.898109543797
+  },
+  "data_split": {
+    "train_period": "2001-01-01 to 2016-03-01",
+    "validation_period": "2016-04-01 to 2021-04-01",
+    "test_period": "2021-05-01 to 2026-06-01",
+    "final_training_rows": 244,
+    "validation_rows": 61,
+    "test_rows": 62
+  },
+  "limitations": [
+    "The model uses the observed average temperature for the same month.",
+    "This is not a forecast issued before that month's weather is known.",
+    "The test period was inspected in earlier exploratory modeling; the final test metrics should therefore be interpreted transparently.",
+    "Performance may change over time as electricity demand patterns evolve."
+  ],
+  "pipeline_file": "texas_electricity_pipeline.joblib",
+  "raw_input_features": [
+    "avg_temp_f",
+    "year",
+    "month"
+  ],
+  "pipeline_test_metrics": {
+    "test_r2": 0.41680916774004284,
+    "test_mae": 3707.6046076673983,
+    "test_rmse": 4250.898109543708
+  }
+}
