@@ -1,0 +1,33 @@
+{
+  "model_name": "Ridge Regression",
+  "model_version": "20261008T070233Z",
+  "target": "charges",
+  "features": [
+    "age",
+    "sex",
+    "bmi",
+    "children",
+    "smoker",
+    "region"
+  ],
+  "selection_metric": "validation R\u00b2",
+  "validation_metrics": {
+    "r2": 0.8356042037945193,
+    "rmse": 4554.3388485480455
+  },
+  "best_cross_validation_r2": 0.8552222418397495,
+  "test_metrics": {
+    "r2": 0.9077116560574876,
+    "rmse": 4118.075137700539,
+    "mae": 2267.4986753019657
+  },
+  "best_parameters": {
+    "regressor__solver": "lsqr",
+    "regressor__alpha": "0.1"
+  },
+  "data_split_rows": {
+    "train": 855,
+    "validation": 214,
+    "test": 268
+  }
+}
